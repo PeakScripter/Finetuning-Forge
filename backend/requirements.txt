@@ -1,0 +1,13 @@
+# Forge-Local Backend Dependencies
+
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+websockets>=12.0
+
+# Optional: GPU monitoring (requires NVIDIA drivers)
+# py3nvml>=0.2.7
+
+# Optional: Training backends (install as needed)
+# unsloth @ git+https://github.com/unslothai/unsloth.git
+# axolotl @ git+https://github.com/OpenAccess-AI-Collective/axolotl.git
+# torchtune>=0.1.0

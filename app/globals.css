@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Tactical Obsidian Palette */
+  --background: #0F0F0F;
+  --background-secondary: #1A1A1A;
+  --foreground: #E5E5E5;
+  --foreground-muted: #8B8B8B;
+
+  /* Forge Accents */
+  --forge-orange: #FF6B00;
+  --forge-orange-glow: rgba(255, 107, 0, 0.3);
+  --forge-amber: #FFA500;
+  --forge-green: #22C55E;
+  --forge-red: #EF4444;
+
+  /* Glassmorphism Layers */
+  --glass-100: rgba(255, 255, 255, 0.02);
+  --glass-200: rgba(255, 255, 255, 0.05);
+  --glass-300: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-foreground-muted: var(--foreground-muted);
+  --color-forge-orange: var(--forge-orange);
+  --color-forge-orange-glow: var(--forge-orange-glow);
+  --color-forge-amber: var(--forge-amber);
+  --color-forge-green: var(--forge-green);
+  --color-forge-red: var(--forge-red);
+  --color-glass-100: var(--glass-100);
+  --color-glass-200: var(--glass-200);
+  --color-glass-300: var(--glass-300);
+  --color-glass-border: var(--glass-border);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Legacy compatibility aliases */
+  --color-neon-blue: var(--forge-orange);
+  --color-neon-purple: var(--forge-amber);
+  --color-neon-green: var(--forge-green);
+  --color-neon-red: var(--forge-red);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, sans-serif;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 107, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 100%, rgba(255, 165, 0, 0.02) 0%, transparent 40%);
+}
+
+/* Telemetry Displays - JetBrains Mono */
+.font-telemetry {
+  font-family: var(--font-mono), 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar - Tactical Style */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 107, 0, 0.2);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 107, 0, 0.4);
+}
+
+/* Active Training Glow Effect */
+.training-active {
+  box-shadow: 0 0 20px var(--forge-orange-glow),
+    0 0 40px var(--forge-orange-glow),
+    inset 0 0 20px rgba(255, 107, 0, 0.05);
+  border-color: var(--forge-orange) !important;
+}
+
+/* Gauge Animations */
+@keyframes pulse-orange {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.pulse-active {
+  animation: pulse-orange 2s ease-in-out infinite;
 }
