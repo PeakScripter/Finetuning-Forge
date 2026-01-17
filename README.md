@@ -1,6 +1,6 @@
 # Forge-Local
 
-**Local-first LLM Fine-Tuning Workstation**
+##Local-first LLM Fine-Tuning Workstation
 
 A tactical interface for fine-tuning language models on your local hardware using industry-standard backends like Unsloth, Axolotl, and Torchtune. Forge-Local bridges the gap between raw command-line scripts and a modern developer experience, offering real-time GPU telemetry, live loss curves, and safe VRAM pre-flight checks to ensure your training runs smoothly on consumer GPUs.
 
