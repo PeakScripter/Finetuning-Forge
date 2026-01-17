@@ -1,4 +1,4 @@
-# Forge-Local 🔥
+# Forge-Local
 
 **Local-first LLM Fine-Tuning Workstation**
 
